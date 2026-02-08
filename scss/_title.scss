@@ -1,0 +1,104 @@
+.section-top {
+  @include media-breakpoint-down(md) {
+    margin-bottom: 40px !important;
+  }
+  .subtitle {
+    color: var(--theme-color1);
+    font-family: var(--text-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 3.6px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .title {
+    color: var(--theme-color-black);
+    font-family: var(--title-font-2);
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    @include media-breakpoint-only(md) {
+      font-size: 75px;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 68px;
+    }
+    @include media-breakpoint-only(xs) {
+      font-size: 68px;
+    }
+  }
+}
+
+// Home three title
+.section-top-two{
+  margin-bottom: 60px;
+  @include for-md {
+    margin-bottom: 40px !important;
+  }
+  .heading-top-icon{
+    margin-bottom: 25px;
+    display: inline-block;
+  }
+  .subtitle {
+    color: var(--theme-color1);
+    font-family: var(--text-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .title {
+    color: var(--theme-color-black);
+    font-family: var(--title-font-2);
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 0;
+    @include media-breakpoint-only(md) {
+      font-size: 75px;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: 60px;
+    }
+    @include media-breakpoint-only(xs) {
+      font-size: 53px;
+    }
+  }
+}
+
+.section-top-three {
+  @include for-md {
+    margin-bottom: 40px !important;
+  }
+  .subtitle {
+    color: var(--theme-color1);
+    font-family: var(--text-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 3.6px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .title {
+    color: var(--theme-color-black);
+    font-family: var(--title-font-2);
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 0;
+    @include media-breakpoint-only(md) {
+      font-size: 55px;
+    }
+    @include media-breakpoint-down(lg){
+      font-size: 50px;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.clint-logo-section {
+    .clint-logo-wrapper {
+
+        .col-xl-2 {
+            &:nth-last-of-type(6) {
+                .logo-card {
+                    border-left: 1px solid var(--theme-color-gray5);
+                    @include media-breakpoint-down(xl){
+                        border-left: none;
+                    }
+                }
+            }
+        }
+
+        .logo-card {
+            border-right: 1px solid var(--theme-color-gray5);
+            background: transparent;
+            height: 100%;
+            @include media-breakpoint-down(md){
+                border-right: none;
+            }
+            .main-logo {
+                padding: 36px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.brand-area {
+    background: var(--theme-color-gray2);
+    padding-top: 33px;
+
+    .brand-items-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 42px;
+        padding: 50px 0 110px 0;
+
+        @include for-xxl {
+            gap: 30px;
+        }
+
+        @include for-xl {
+            flex-wrap: wrap;
+        }
+        @include media-breakpoint-down(lg){
+            padding: 0 0 80px 0;
+        }
+
+        .brand-item {
+            .thumb-wrap {
+                width: 195px;
+                height: 195px;
+                background: var(--theme-color-white);
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 17px;
+                transition: all 150ms ease-in-out;
+
+                @include for-xl {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                @include for-sm {
+                    width: 130px;
+                    height: 130px;
+                }
+
+                &:hover {
+                    background: var(--theme-color1);
+                }
+            }
+
+            .thumb {
+                border-radius: 50%;
+                width: 190px;
+                height: 190px;
+                border: 1px solid var(--theme-color1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 100%;
+                background: var(--theme-color-white);
+                overflow: hidden;
+
+                @include for-xl {
+                    width: 145px;
+                    height: 145px;
+                }
+
+                @include for-sm {
+                    width: 125px;
+                    height: 125px;
+                }
+                img {
+                    padding: 10px;
+                    @include media-breakpoint-down(md){
+                        max-width: 90px;
+                    }
+                }
+            }
+
+            .card-title {
+                color: var(--theme-color-black);
+                text-align: center;
+                font-size: 20px;
+                font-family: var(--text-font);
+                font-weight: 400;
+                line-height: 36px;
+            }
+
+
+        }
+    }
+}

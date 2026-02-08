@@ -1,0 +1,191 @@
+.contact-section {
+  background: var(--theme-color-gray2);
+  background-size: cover;
+  padding: 150px 0 100px;
+  .shape1 {
+    position: absolute;
+    top: 0;
+    right: 3%;
+
+    @include media-breakpoint-down(xl) {
+      opacity: 0.3;
+    }
+  }
+  .section-top {
+    .title {
+      font-size: 92px;
+      @include media-breakpoint-down(lg){
+        font-size: 50px;
+      }
+    }
+  }
+
+  .contact-form {
+    position: relative;
+    padding: 120px 75px 75px 75px;
+    border: 1px solid var(--theme-color-gray6);
+    background: transform;
+    text-align: start;
+    z-index: 6;
+
+    @include media-breakpoint-down(lg) {
+      padding: 30px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -5px;
+      left: -6px;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--theme-color-gray6);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--theme-color-white);
+      opacity: 0.6;
+    }
+
+    .radio-group {
+      display: flex;
+      justify-content: flex-start;
+      gap: 50px;
+      padding-top: 20px;
+
+      @include media-breakpoint-down(xl) {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+    }
+
+    .radio-option {
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: var(--theme-color-black);
+      font-family: var(--text-font);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+      cursor: pointer;
+
+      input[type="radio"] {
+        display: none;
+      }
+
+      .custom-radio {
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--theme-color-gray6);
+        border-radius: 50%;
+        margin-right: 10px;
+        display: inline-block;
+        position: relative;
+      }
+
+      input[type="radio"]:checked+.custom-radio::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--theme-color-black);
+        border-radius: 50%;
+      }
+    }
+    .shape2 {
+      position: absolute;
+      top: -60px;
+      left: 75px;
+      @include media-breakpoint-down(lg){
+        display: none;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        left: calc(50% - 40px);
+        right: 0;
+        width: 80px;
+        height: 90px;
+        background-image: url(../images/contact/contact-shape2_4.png);
+        top: calc(50% - 45px);
+      }
+    }
+  }
+
+  .contact-thumb {
+    margin-left: 100px;
+    @include media-breakpoint-down(xl){
+      display: none;
+    }
+
+    .thumb1 {
+      position: relative;
+      transform: rotate(30deg);
+      border: 20px solid var(--theme-color-white);
+      background: #d9d9d9;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      max-width: 380px;
+      margin-top: 60px;
+      overflow: hidden;
+
+      img {
+        transition: all 0.6s ease-in-out 0s;
+
+        &:hover {
+          transform: scale(1.1) rotate(3deg);
+          transition: all 0.6s ease-in-out 0s;
+        }
+      }
+    }
+
+    .thumb2 {
+      position: relative;
+      transform: rotate(20deg);
+      border: 20px solid var(--theme-color-white);
+      background: #d9d9d9;
+      box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      max-width: 380px;
+      margin-top: -135px;
+      margin-left: 75px;
+      margin-bottom: 55px;
+      overflow: hidden;
+
+      img {
+        transition: all 0.6s ease-in-out 0s;
+
+        &:hover {
+          transform: scale(1.1) rotate(3deg);
+          transition: all 0.6s ease-in-out 0s;
+        }
+      }
+    }
+  }
+
+  .input-field {
+    background-color: transparent;
+    border-bottom: 1px solid #989898;
+    width: 100%;
+    padding-bottom: 11px;
+    margin-bottom: 65px;
+  }
+
+  .text-field {
+    background-color: transparent;
+    border-bottom: 1px solid #989898;
+    width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+}

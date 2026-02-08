@@ -1,0 +1,115 @@
+.introduce-section-two {
+    .introduce-wrapper {
+        @include media-breakpoint-down(xl){
+            background-image: none !important;
+            background-color: #ebeff0;
+        }
+        .thumb {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                transition: all 0.6s ease-in-out 0s;
+
+                &:hover {
+                    transform: scale(1.1) rotate(3deg);
+                    transition: all 0.6s ease-in-out 0s;
+                }
+            }
+
+            .border-shape {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: calc(100% - 20px);
+                height: calc(100% - 20px);
+                border: 2px solid var(--theme-color-white);
+                background: transparent;
+                transition: all 0.6s ease-in-out 0s;
+                pointer-events: none;
+            }
+
+            .social-icon {
+                position: absolute;
+                right: 46px;
+                bottom: 42px;
+
+                @include media-breakpoint-down(md) {
+                    right: 20px;
+                    bottom: 20px;
+                }
+
+                ul {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+
+                    li {
+                        a {
+                            width: 45px;
+                            height: 45px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            background: var(--theme-color-white);
+                            border-radius: 100%;
+
+                            @include media-breakpoint-down(md) {
+                                width: 35px;
+                                height: 35px;
+                            }
+
+                            &:hover {
+                                background: var(--theme-color1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .row {
+            &:last-child {
+                .col-xl-6 {
+                    .content {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        .content {
+            margin-left: 93px;
+            margin-right: 30px;
+
+            @include media-breakpoint-down(xl) {
+                margin-left: 33px;
+            }
+
+            @include media-breakpoint-down(lg) {
+                margin-left: 0;
+                margin-right: 0px;
+            }
+
+            .sub-title {
+                color: var(--theme-color1);
+                font-family: var(--text-font);
+                font-weight: var(--body-font-weight);
+                letter-spacing: 3.6px;
+                text-transform: uppercase;
+            }
+
+            .title {
+                color: var(--theme-color-black);
+                font-family: var(--text-font);
+                font-weight: var(--body-font-weight);
+            }
+
+            .text {
+                color: var(--text-color);
+                max-width: 560px
+            }
+        }
+    }
+}

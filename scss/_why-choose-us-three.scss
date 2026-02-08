@@ -1,0 +1,169 @@
+.why-choose-us-section-three {
+    padding-bottom: 120px;
+
+    @include for-md {
+        padding-bottom: 100px;
+    }
+
+    .row {
+        .col-xl-4 {
+            &:nth-of-type(2) {
+                .why-choose-us-card {
+                    border: 1px solid var(--theme-color-gray5);
+                }
+            }
+
+            &:nth-of-type(3) {
+                .why-choose-us-card {
+                    border: 1px solid var(--theme-color-gray5);
+                    border-left: none;
+                    border-bottom: none;
+
+                    @include for-lg {
+                        border: 1px solid var(--theme-color-gray5);
+                        border-right: none;
+                    }
+
+                    @include for-sm {
+                        border: 1px solid var(--theme-color-gray5);
+                        border-top: none;
+                    }
+                }
+            }
+
+            &:nth-of-type(4) {
+                .why-choose-us-card {
+                    border: 1px solid var(--theme-color-gray5);
+                    border-top: none;
+                }
+            }
+
+            &:nth-of-type(5) {
+                .why-choose-us-card {
+                    border: 1px solid var(--theme-color-gray5);
+                    border-left: none;
+                    border-top: none;
+
+                    @include for-lg {
+                        border: 1px solid var(--theme-color-gray5);
+                        border-right: none;
+                        border-top: none;
+                    }
+
+                    @include for-sm {
+                        border: 1px solid var(--theme-color-gray5);
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .thumb {
+        @include for-xl {
+            height: 100%;
+        }
+        img {
+            @include for-xl {
+                object-fit: cover;
+                height: 100%;
+            }
+
+            @include for-lg {
+                height: 100%;
+                width: 100%;
+            }
+
+            @include for-md {
+                max-width: 100%;
+            }
+
+            @include for-sm {
+                height: auto;
+                width: 100%;
+            }
+        }
+    }
+
+    .why-choose-us-card {
+        padding: 43px 0 40px 60px;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+
+        @include for-md {
+            padding: 43px 15px 40px 15px;
+        }
+
+        .icon-wrap {
+            width: 116px;
+            height: 116px;
+            background: var(--theme-color-gray);
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 200ms ease-in-out;
+            margin-bottom: 20px;
+
+            .card-icon {
+                width: 106px;
+                height: 106px;
+                border-radius: 100%;
+                border: 1px solid var(--theme-color-gray5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 200ms ease-in-out;
+
+                svg path {
+                    transition: all 200ms ease-in-out;
+                    fill: #465E6E;
+                }
+            }
+        }
+
+        .title {
+            color: var(--theme-color-black);
+            font-family: var(--text-font-2);
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 42px;
+            margin-bottom: 15px;
+        }
+
+        .text {
+            color: var(--text-color);
+            font-family: var(--text-font);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 28px;
+            max-width: 334px;
+            margin-bottom: 0;
+        }
+
+        .shape-1 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        &:hover {
+
+            .icon-wrap {
+                background: var(--theme-color1);
+
+                .card-icon {
+                    border: 1px solid var(--theme-color-white);
+
+                    svg path {
+                        fill: var(--theme-color-white);
+                    }
+                }
+            }
+        }
+    }
+}

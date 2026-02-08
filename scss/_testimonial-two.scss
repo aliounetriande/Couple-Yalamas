@@ -1,0 +1,152 @@
+.testimonial-section-two {
+    overflow: hidden;
+    position: relative;
+
+    .section-top-two {
+        margin-bottom: 40px;
+    }
+
+    .shape-1 {
+        position: absolute;
+        left: 0;
+        top: -288px;
+        @include media-breakpoint-down(md){
+            display: none;
+        }
+    }
+
+    .shape-2 {
+        position: absolute;
+        right: 0;
+        top: 0;
+        @include media-breakpoint-down(md){
+            display: none;
+        }
+    }
+
+    .testimonial-wrapper {
+        position: relative;
+
+        .testimonial-card {
+            .thumb {
+                z-index: 9;
+                text-align: center;
+                margin-bottom: 64px;
+                position: relative;
+
+                img {
+                    border-radius: 100%;
+                    opacity: 0.1;
+                }
+
+                .icon {
+                    position: absolute;
+                    bottom: -45px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 88px;
+                    height: 88px;
+                    z-index: 99;
+                    border-radius: 100%;
+                    background: var(--theme-color1);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    visibility: hidden;
+                }
+            }
+
+            .content {
+                display: none;
+
+                .title {
+                    color: var(--theme-color-black);
+                    text-align: center;
+                    font-family: var(--text-font);
+                    font-weight: var(--body-font-weight);
+                }
+
+                .sub-title {
+                    color: var(--theme-color1);
+                    text-align: center;
+                    font-family: var(--text-font);
+                    font-weight: var(--body-font-weight);
+                }
+
+                .text {
+                    color: var(--text-color);
+                    font-size: 28px;
+                    line-height: 1.8;
+                    font-weight: var(--body-font-weight);
+                    text-align: center;
+                    max-width: 938px;
+                    margin: 0 -250px;
+
+                    @include media-breakpoint-down(xxl) {
+                        font-size: 24px;
+                    }
+                    @include media-breakpoint-down(xl) {
+                        margin: 0;
+                    }
+                    @include media-breakpoint-down(lg) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .swiper-slide {
+            transition: all 0.3s ease-in-out;
+
+            &.swiper-slide-active {
+                .testimonial-card {
+                    pointer-events: none;
+
+                    .thumb {
+                        .icon {
+                            visibility: visible;
+                        }
+
+                        img {
+                            opacity: 1;
+                        }
+                    }
+
+                    .content {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .testimonial-two-navigation {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 332px;
+            z-index: 99;
+
+            @include media-breakpoint-down(md) {
+                gap: 95px;
+                z-index: -1;
+            }
+
+            .testimonial-slider-two-next,
+            .testimonial-slider-two-prev {
+                svg path {
+                    fill: var(--theme-color-gray8);
+                    transition: all 150ms ease-in-out;
+                }
+
+                &:hover {
+                    svg path {
+                        fill: var(--theme-color-black);
+                    }
+                }
+            }
+        }
+    }
+}

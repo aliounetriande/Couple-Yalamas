@@ -1,0 +1,85 @@
+.blog-section {
+  .blog-item {
+    overflow: hidden;
+    .thumb {
+      border-radius: 180px 0 0 0;
+      position: relative;
+      img {
+        border-radius: 180px 0 0 0;
+        transition: all 0.6s ease-in-out 0s;
+        width: 100%;
+        &:hover { 
+          transition: all 0.6s ease-in-out 0s;
+        }
+      }
+      .blog-meta {
+        position: absolute;
+        z-index: 8;
+        width: 84px;
+        height: 84px;
+        background-color: var(--theme-color1);
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        left: 22px;
+        top: 20px;
+
+        p {
+          color: var(--theme-color-white);
+          font-family: var(--text-font);
+          font-size: 34px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 32px;
+          text-transform: uppercase;
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: end;
+          margin-bottom: 0;
+
+          span {
+            color: var(--theme-color-white);
+            font-family: var(--text-font);
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+    .content {
+      border: 1px solid var(--border-color);
+      padding: 33px 35px 34px;
+      @include media-breakpoint-down(xl) {
+        padding: 25px;
+      }
+      .title {
+        color: var(--theme-color-black);
+        font-family: var(--text-font);
+        margin-bottom: 9px;
+        @include media-breakpoint-down(lg) {
+          font-size: 24px;
+          margin-bottom: 8px;
+        }
+      }
+      .text {
+        font-family: var(--text-font);
+      }
+      .read-more {
+        a {
+          align-items: center;
+          color: var(--theme-color-black);
+          display: flex;
+          gap: 10px;
+          &:hover{
+            color: var(--theme-color1);
+          }
+        }
+      }
+    }
+  }
+}

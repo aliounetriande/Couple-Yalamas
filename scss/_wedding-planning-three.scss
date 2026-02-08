@@ -1,0 +1,67 @@
+.planning-section-three {
+    padding-bottom: 113px;
+
+    @include for-md {
+        padding-bottom: 70px;
+    }
+
+    @include for-sm {
+        padding-bottom: 50px;
+    }
+
+    .planning-wrapper {
+        padding: 153px 0 145px 0;
+
+        @include media-breakpoint-down(lg){
+            padding: 80px 0 80px 0;
+        }
+
+        .planning-content {
+            .planning-logo {
+                margin-bottom: 42px;
+            }
+
+            .planning-title {
+                color: var(--theme-color-white);
+                text-align: center;
+                font-family: var(--title-font-2);
+                font-size: 130px;
+                font-weight: 400;
+                line-height: 110px;
+                max-width: 1039px;
+                margin: 0 auto;
+
+                @include for-lg {
+                    font-size: 100px;
+                    line-height: 80px;
+                }
+
+                @include for-md {
+                    font-size: 80px;
+                    line-height: 70px;
+                }
+
+                @include for-sm {
+                    font-size: 60px;
+                    line-height: 50px;
+                }
+
+                @include for-sm {
+                    font-size: 45px;
+                    line-height: 40px;
+                }
+            }
+
+            .text {
+                color: var(--theme-color-white);
+                text-align: center;
+                font-family: var(--text-font);
+                font-size: 20px;
+                ;
+                font-weight: 400;
+                line-height: 36px;
+                margin-bottom: 42px;
+            }
+        }
+    }
+}

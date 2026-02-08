@@ -1,0 +1,199 @@
+.eventtime-section {
+  position: relative;
+  overflow: hidden;
+  .auto-container {
+    position: relative;
+  }
+  .counter-thumb-1 {
+    position: absolute;
+    left: 46px;
+    top: 38px;
+    @include media-breakpoint-down(xxl) {
+      display: none;
+    }
+  }
+  .counter-thumb-2 {
+    position: absolute;
+    right: -35px;
+    bottom: 54px;
+
+    @include media-breakpoint-down(xxl) {
+      display: none;
+    }
+  }
+  .counter-shape-1 {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    @include media-breakpoint-down(xxl) {
+      display: none;
+    }
+  }
+  .counter-shape-2 {
+    position: absolute;
+    right: 80px;
+    top: 0;
+    @include media-breakpoint-down(xxl) {
+      display: none;
+    }
+  }
+  .counter-shape-3 {
+    position: absolute;
+    left: 0;
+    bottom: -161px;
+    @include media-breakpoint-down(xxl) {
+      display: none;
+    }
+  }
+  .eventtime-content {
+    padding: 118px 0;
+    background: var(--theme-color-gray2);
+    border: 1px solid var(--border-color-6);
+    @include media-breakpoint-down(lg){
+      padding: 80px 0;
+    }
+    @include media-breakpoint-down(md){
+      border: none;
+    }
+    &-wrap {
+      padding: 50px 60px;
+      background: var(--theme-color-gray2);
+      @include media-breakpoint-down(xl) {
+        padding: 15px 16px;
+      }
+    }
+    .section-top {
+      margin-bottom: 50px;
+      @include media-breakpoint-down(xl) {
+        margin-bottom: 20px !important;
+      }
+      h2 {
+        margin-bottom: 0;
+        @include media-breakpoint-down(md) {
+          font-size: 60px;
+        }
+      }
+    }
+  }
+  .eventtime-text {
+    @include media-breakpoint-down(md) {
+      padding: 0 5px;
+    }
+  }
+  .eventtime-boxes {
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 70px;
+    position: relative;
+    z-index: 5;
+    @include media-breakpoint-down(xl) {
+      gap: 20px;
+      margin-top: 40px;
+    }
+    @include media-breakpoint-down(md) {
+      flex-wrap: wrap;
+    }
+    .eventtime-box {
+      text-align: center;
+      .title {
+        color: var(--theme-color1);
+        text-align: center;
+        font-family: var(--text-font);
+        font-size: 90px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: uppercase;
+        @include media-breakpoint-down(lg) {;
+          font-size: 70px;
+        }
+        @include media-breakpoint-down(md) {;
+          font-size: 50px;
+        }
+      }
+      .text {
+        color: var(--theme-color-black);
+        font-family: var(--text-font);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        @include media-breakpoint-down(xl) {}
+      }
+    }
+  }
+  .time-counter {
+    .time-countdown {
+      display: flex;
+      align-items: center;
+      @include media-breakpoint-down(sm){
+        flex-direction: column;
+        gap: 20px;
+      }
+      .counter-column {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-right: 50px;
+        padding-right: 70px;
+        position: relative;
+        @include media-breakpoint-down(lg){
+          margin-right: 30px;
+          padding-right: 50px;
+        }
+        @include media-breakpoint-down(sm){
+          margin-right: 0;
+          padding-right: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+          &:before {
+            display: none;
+          }
+        }
+        &:before {
+          position: absolute;
+          content: '';
+          background-image: url(../images/icons/line-icon1.svg);
+          right: 0;
+          top: calc(50% - 25.5px);
+          width: 40px;
+          height: 55px;
+          @include media-breakpoint-down(sm){
+            display: none;
+          }
+        }
+        .count {
+          color: var(--theme-color1);
+          font-size: 90px;
+          font-weight: 400;
+          display: block;
+          line-height: 1;
+          font-family: var(--text-font);
+          @include media-breakpoint-down(lg){
+            font-size: 60px;
+          }
+          @include media-breakpoint-down(md){
+            font-size: 50px;
+          }
+        }
+        sub {
+          margin-top: 10px;
+          color: var(--theme-color-black);
+          position: relative;
+          font-weight: 400;
+          font-size: 16px;
+          font-family: var(--text-font);
+          margin-bottom: 24px;
+          @include media-breakpoint-down(md){
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.instagram-section-two {
+    margin-top: 120px;
+
+    @include media-breakpoint-down(lg) {
+        margin-top: 0;
+    }
+
+    .swiper-wrapper {
+        .swiper-slide:nth-child(even) {
+            margin-top: 60px;
+        }
+
+        .thumb {
+            overflow: hidden;
+
+            img {
+                transition: all 0.6s ease-in-out 0s;
+                text-align: center;
+
+                &:hover {
+                    transform: scale(1.1) rotate(3deg);
+                    transition: all 0.6s ease-in-out 0s;
+                }
+            }
+        }
+    }
+}

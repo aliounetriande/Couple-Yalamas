@@ -1,0 +1,38 @@
+.gallery-section {
+    .gallery-items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+        overflow: hidden;
+
+        a {
+            overflow: hidden;
+
+            img {
+                transition: all 0.6s ease-in-out 0s;
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all 0.6s ease-in-out 0s;
+                }
+            }
+        }
+
+        @include media-breakpoint-only(md) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @include media-breakpoint-only(sm) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @include media-breakpoint-only(xs) {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+    }
+}

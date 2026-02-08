@@ -1,0 +1,40 @@
+.feature-section {
+  .feature-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 110px;
+    @media (max-width: 1399.98px){
+      gap:50px;
+    }
+    @include media-breakpoint-down(lg) {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .feature-block {
+      text-align: center;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      .inner-box {
+        .icon {
+          margin-bottom: 38px;
+        }
+
+        .title {
+          font-weight: normal;
+          text-align: center;
+        }
+
+        .text {
+          color: var(--text-color);
+          text-align: center;
+          font-family: var(--text-font);
+          max-width: 176px;
+        }
+      }
+    }
+  }
+}

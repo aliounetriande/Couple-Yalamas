@@ -1,0 +1,116 @@
+@function hexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+//main theme colors
+$theme-color1: #C78665;
+$theme-color2: #1a4137;
+$theme-color3: #465E6E;
+$theme-color4: #895128;
+$theme-color5: #1B384C;
+$theme-color6: #587689;
+$theme-color7: #FDFDFD;
+$theme-color8: #D9D9D9;
+
+:root {
+	//Default colors
+	--theme-color-light: #ffffff;
+	--theme-color-white: #ffffff;
+	--theme-color-white-rgb: 255,255,255; 
+	--theme-color-dark: #1a3841;
+	--theme-color-gray: #E9EEF1;  
+	--theme-color-gray2: #EDF5F7;   
+	--theme-color-gray3: #EBF0F2;
+	--theme-color-gray4: #7B7B7B;  
+	--theme-color-gray5: #999;  
+	--theme-color-gray6: #555;  
+	--theme-color-gray7: #ECF0F2;  
+	--theme-color-gray8: #B1B1B1;  
+	--theme-color-gray9: #f7f7f7;
+	--theme-color-black: #000000; 
+
+	//theme colors
+	--theme-color1: #{$theme-color1};
+	--theme-color2: #{$theme-color2};
+	--theme-color3: #{$theme-color3};
+	--theme-color4: #{$theme-color4};
+	--theme-color5: #{$theme-color5};
+	--theme-color6: #{$theme-color6};
+	--theme-color7: #{$theme-color7};
+	--theme-color8: #{$theme-color8};
+
+  //rgb version of those theme colors
+  --theme-color1-rgb: #{hexToRGB($theme-color1)};
+  --theme-color2-rgb: #{hexToRGB($theme-color2)};
+  --theme-color3-rgb: #{hexToRGB($theme-color3)};
+  --theme-color4-rgb: #{hexToRGB($theme-color4)};
+  --theme-color5-rgb: #{hexToRGB($theme-color5)};
+  --theme-color6-rgb: #{hexToRGB($theme-color6)};
+  --theme-color7-rgb: #{hexToRGB($theme-color7)};
+  --theme-color8-rgb: #{hexToRGB($theme-color8)};
+
+  --theme-color1-text-color: #ffffff;
+  --theme-color2-text-color: var(--theme-color2);
+  --theme-color3-text-color: #ffffff;
+
+  //text heading color
+  --text-color:  #666;
+	--dark-color:  #111;
+	--text-color2: #444;
+	--text-color3: #DBDBDB;
+	--dark-color4: #0B0B0B;
+  --headings-color:     var(--theme-color-black);
+  --link-color:         var(--theme-color1);
+  --link-hover-color:   var(--theme-color1);
+
+
+	// border color
+	--border-color: #C8C8C8;
+	--border-color-2: #BEBEBE;
+	--border-color-3: #BFBFBF;
+	--border-color-5: #949494;
+	--border-color-6: #7D7D7D;
+	--border-color-7: #C3C3C3;
+	--border-color-8: #CECECE;
+	--border-color-9: #1A1A1A;
+
+	//font family
+	--text-font: "Marcellus", serif;
+	--title-font: var(--text-font);
+	--title-font-2: "Alex Brush", cursive;
+
+	//body
+	--body-font-size: 16px;
+	--body-line-height: 28px;
+	--body-font-weight: 400;
+
+	//heading font size + line-height + weight
+	--headings-color: var(--theme-color-black);
+
+  --h1-font-size: 80px;
+  --h2-font-size: 50px;
+  --h3-font-size: 30px;
+  --h4-font-size: 24px;
+  --h5-font-size: 20px;
+  --h6-font-size: 16px;
+
+	--line-height-heading-h1: 100px;
+	--line-height-heading-h2: 60px;
+	--line-height-heading-h3: 36px;
+	--line-height-heading-h4: 36px;
+	--line-height-heading-h5: 32px;
+	--line-height-heading-h6: 28px;
+
+	--h1-font-weight: 400;
+	--h2-font-weight: 400;
+	--h3-font-weight: 400;
+	--h4-font-weight: 400;
+	--h5-font-weight: 400;
+	--h6-font-weight: 400;
+	--font-weight-400: 400;
+
+	//container
+	--container-width: 1400px;
+	--small-container-width: 1000px;
+	--large-container-width: 1760px;
+}

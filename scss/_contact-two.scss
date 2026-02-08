@@ -1,0 +1,124 @@
+.contact-section-two {
+    .form-wrap {
+        background: var(--theme-color-white);
+        padding-right: 20px;
+        padding-bottom: 20px;
+        overflow: hidden;
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+
+        .shape1 {
+            position: absolute;
+            top: -280px;
+            left: 0;
+            pointer-events: none;
+            @include media-breakpoint-down(md){
+                display: none;
+            }
+        }
+
+        .shape2 {
+            position: absolute;
+            bottom: -290px;
+            right: 20px;
+            pointer-events: none;
+        }
+    }
+
+    .contact-wrapper {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        justify-content: center;
+        margin-bottom: -256px;
+
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 0;
+        }
+
+        .contact-form {
+            border: 1px solid var(--theme-color1);
+            background: transparent;
+            z-index: 6;
+            width: 922px;
+            padding: 90px 75px 75px 67px;
+
+            @include media-breakpoint-down(lg) {
+                width: 100%;
+            }
+
+            @include media-breakpoint-down(lg) {
+                padding: 30px;
+            }
+
+            .radio-group {
+                display: flex;
+                justify-content: flex-start;
+                gap: 50px;
+                padding-top: 20px;
+
+                @include media-breakpoint-down(xl) {
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+            }
+
+            .radio-option {
+                position: relative;
+                display: flex;
+                align-items: center;
+                color: var(--text-color);
+                font-family: var(--text-font);
+                font-size: var(--body-font-size);
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px;
+                cursor: pointer;
+
+                input[type="radio"] {
+                    display: none;
+                }
+
+                .custom-radio {
+                    width: 20px;
+                    height: 20px;
+                    border: 2px solid var(--theme-color-gray6);
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    display: inline-block;
+                    position: relative;
+                }
+
+                input[type="radio"]:checked+.custom-radio::after {
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 10px;
+                    height: 10px;
+                    background-color: var(--theme-color-black);
+                    border-radius: 50%;
+                }
+            }
+        }
+
+
+        .input-field {
+            border-bottom: 1px solid #989898;
+            width: 100%;
+            padding-bottom: 14px;
+            margin-bottom: 56px;
+        }
+
+        .text-field {
+            border-bottom: 1px solid #989898;
+            width: 100%;
+            padding-bottom: 62px;
+            margin-top: 57px;
+        }
+    }
+}

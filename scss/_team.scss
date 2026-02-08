@@ -1,0 +1,126 @@
+.team-section {
+  position: relative;
+  .shape-box {
+    .shape-1 {
+      position: absolute;
+      left: 0;
+      bottom: 120px;
+    }
+    .shape-2 {
+      position: absolute;
+      right: 0;
+      bottom: 400px;
+    }
+  }
+  .team-member {
+    padding: 10px 10px 38px;
+    border: 1px solid var(--theme-color-gray6);
+    background: var(--theme-color-white);
+    margin-top: 110px;
+    position: relative;
+    @include transition(all 300ms ease);
+    &:before {
+      background: var(--theme-color3);
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      position: absolute;
+      z-index: -1;
+      @include transition(all 300ms ease);
+    }
+
+    &:hover {
+      &:before {
+        height: 100%;
+      }
+      .member-image {
+        img {
+          transform: rotate(0deg);
+        }
+      }
+      .name {
+        color: var(--theme-color-white);
+      }
+      .social {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .social {
+      align-items: center;
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: -50px;
+      opacity: 0;
+      position: relative;
+      top: 50px;
+      visibility: hidden;
+      z-index: 6;
+      @include transition(all 300ms ease);
+
+      a {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--theme-color-white);
+        border-radius: 50%;
+      }
+    }
+
+    .member-image {
+      padding: 30px;
+      margin-top: -120px;
+      img {
+        background: var(--theme-color-white);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        transform: rotate(-10deg);
+        @include transition(all 300ms ease);
+      }
+    }
+
+    .designation {
+      color: var(--Theme-Color1, #c78665);
+      font-family: var(--text-font);
+      letter-spacing: 0.2em;
+      line-height: 1;
+      margin-bottom: 10px;
+      margin-top: 30px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .name {
+      color: var(--theme-color-black);
+      font-family: var(--text-font);
+      font-weight: 400;
+      text-align: center;
+      @include transition(all 300ms ease);
+    }
+  }
+
+  .team-slider {
+    padding-bottom: 62px;
+  }
+  .swiper-pagination-bullet {
+    background: #d9d9d9;
+    opacity: 0.5;
+  }
+
+  .swiper-pagination-bullets {
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+  }
+  .swiper-pagination-bullet-active {
+    background: var(--theme-color4);
+    opacity: 1;
+  }
+}

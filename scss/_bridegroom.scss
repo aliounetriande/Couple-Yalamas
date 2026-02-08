@@ -1,0 +1,171 @@
+.bridegroom-section {
+  position: relative;
+  .bridegroom-shape-1 {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    @media (max-width: 1699.98px) {
+      display: none;
+    }
+  }
+  .groom-box {
+    .name {
+      color: var(--theme-color-black);
+      font-family: var(--text-font);
+      font-size: 32px;
+      margin-bottom: 14px;
+      text-align: start;
+    }
+    .designation {
+      color: var(--theme-color1);
+      text-align: start;
+      font-family: var(--text-font);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 3.6px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      @include media-breakpoint-down(xl) {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+    .desc {
+      color: var(--text-color);
+      text-align: start;
+      font-family: var(--text-font);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+      margin-bottom: 50px;
+      @include media-breakpoint-down(xl) {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+    }
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      a {
+        color: var(--theme-color-dark);
+        font-size: 35px;
+        &:hover {
+          color: var(--theme-color1);
+        }
+      }
+    }
+  }
+  .bride-box {
+    .name {
+      color: var(--theme-color-black);
+      text-align: end;
+      font-family: var(--text-font);
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 14px;
+      /*@include media-breakpoint-down(xl) {
+        font-size: 22px;
+      }*/
+    }
+    .designation {
+      color: var(--theme-color1);
+      text-align: end;
+      font-family: var(--text-font);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 3.6px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      @include media-breakpoint-down(xl) {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+    }
+    .desc {
+      color: var(--text-color);
+      font-family: var(--text-font);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px;
+      margin-bottom: 50px;
+      margin-left: auto;
+      max-width: 295px;
+      text-align: end;
+      @include media-breakpoint-down(xl) {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+      @include media-breakpoint-down(lg) {
+        max-width: none;
+      }
+    }
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 28px;
+      a {
+        color: var(--theme-color-dark);
+        font-size: 35px;
+        &:hover {
+          color: var(--theme-color1);
+        }
+      }
+    }
+  }
+  .bridegroom-img {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 30px;
+      margin-left: 0;
+      margin-top: 30px;
+    }
+    .shape1 {
+      position: absolute;
+      bottom: -3rem;
+      left: -4rem;
+      z-index: 5;
+    }
+    .shape2 {
+      position: absolute;
+      top: -2rem;
+      right: -3rem;
+      z-index: 5;
+    }
+    .groom-image {
+      position: relative;
+      z-index: 1;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+      }
+    }
+    .bride-image {
+      position: relative;
+      margin-left: -150px;
+      z-index: 1;
+      @include media-breakpoint-only(xs) {
+        margin-left: -60px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        border: 15px solid var(--theme-color-white);
+      }
+    }
+  }
+}

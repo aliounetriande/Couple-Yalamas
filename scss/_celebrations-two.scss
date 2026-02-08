@@ -1,0 +1,83 @@
+.celebrations-section-two {
+  .celebrations-wrapper{
+    .section-top-two{
+      padding-bottom: 30px;
+    }
+  }
+  .celebrations-card-wrap {
+    border-top: 10px solid var(--theme-color-gray2);
+    border-radius: 100%;
+    position: relative;
+    transition: all 150ms ease-in-out;
+    @include media-breakpoint-down(lg){
+      margin-bottom: 40px;
+    }
+
+    .shape-icon {
+      position: absolute;
+      top: -54px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 250ms ease-in-out;
+    }
+
+    .icon {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 150ms ease-in-out;
+      &.style-1 {
+        top: -19px;
+      }
+      svg path {
+        fill: var(--theme-color3);
+      }
+    }
+
+    .celebrations-card {
+      border-radius: 49%;
+      border: 1px solid var(--border-color-8);
+      background: var(--theme-color-white);
+      padding: 90px 0 64px 0;
+      @include transition(all 400ms ease);
+      .title {
+        color: var(--theme-color-black);
+        text-align: center;
+        font-family: var(--text-font);
+        font-size: 30px;
+        font-weight: var(--body-font-weight);
+        line-height: 44px;
+        text-transform: uppercase;
+      }
+
+      .text {
+        color: var(--theme-color-black);
+        text-align: center;
+        line-height: var(--line-height-heading-h6);
+        max-width: 213px;
+        margin: 0 auto;
+      }
+    }
+
+    &:hover {
+      border-top: 10px solid var(--theme-color1);
+
+      .shape-icon {
+        svg path {
+          fill: var(--theme-color1);
+        }
+      }
+
+      .icon {
+        svg path {
+          fill: var(--theme-color-white);
+        }
+      }
+
+      .celebrations-card {
+        border: 1px solid var(--theme-color1);
+      }
+    }
+  }
+}
