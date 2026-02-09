@@ -280,7 +280,8 @@
             const tl = gsap.timeline({
                 defaults: { ease: "power2.inOut" },
                 onComplete: () => {
-                    // Rediriger vers la page index
+                    // Déclencher la musique et rediriger
+                    localStorage.setItem('startMusic', 'true');
                     window.location.href = "main.html";
                 }
             });
