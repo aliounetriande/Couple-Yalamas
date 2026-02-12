@@ -229,31 +229,8 @@
       <!-- Preloader -->
       <div class="preloader"></div>
 
-      <!-- Audio Player Section -->
-      <section class="audio-section" style="padding: 20px 0; background: #f8f9fa;">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 text-center">
-              <div class="audioBar" id="audioPlayer" role="region" aria-label="Lecteur audio">
-                <div class="audio-content">
-                  <div class="audio-buttons">
-                    <button class="audio-btn" id="audioToggle" aria-label="Lecture" type="button">
-                      <span id="playIcon">▶</span>
-                      <span id="pauseIcon" style="display: none;">❚❚</span>
-                    </button>
-                    <button class="audio-btn" id="audioRestart" aria-label="Recommencer" type="button">
-                      <span>↻</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <p class="audio-instruction" style="margin-top: 10px; color: #105232; font-size: 14px; font-weight: 500; font-family: var(--text-font);">Veuillez cliquer sur play pour démarrer la musique</p>
-            </div>
-          </div>
-        </div>
-        <audio id="audioElement" src="music.mp3" preload="metadata"></audio>
-      </section>
-      <!-- End Audio Player Section -->
+      <!-- Hidden Audio Element -->
+      <audio id="audioElement" src="music.mp3" preload="metadata"></audio>
 
       <!-- Main Header-->
       <header class="main-header header-style-one wow fadeInUp">
@@ -1191,33 +1168,13 @@
   'use strict';
   
   // Elements
-  const audioPlayer = document.getElementById('audioPlayer');
   const audioElement = document.getElementById('audioElement');
-  const toggleBtn = document.getElementById('audioToggle');
-  const restartBtn = document.getElementById('audioRestart');
-  const playIcon = document.getElementById('playIcon');
-  const pauseIcon = document.getElementById('pauseIcon');
-  const currentTimeSpan = document.getElementById('currentTime');
-  const totalTimeSpan = document.getElementById('totalTime');
   
-  // State
-  let isPlaying = false;
-  let duration = 0;
-  let updateTimeId = null;
-  
-  // Check if all elements exist
-  if (!audioPlayer || !audioElement || !toggleBtn || !restartBtn || !playIcon || !pauseIcon) {
-    console.warn('Audio player elements not found');
-    console.log('audioPlayer:', audioPlayer);
-    console.log('audioElement:', audioElement);
-    console.log('toggleBtn:', toggleBtn);
-    console.log('restartBtn:', restartBtn);
-    console.log('playIcon:', playIcon);
-    console.log('pauseIcon:', pauseIcon);
+  // Check if audio element exists
+  if (!audioElement) {
+    console.warn('Audio element not found');
     return;
   }
-  
-  console.log('All audio elements found successfully');
   
   // Detect iOS devices
   function isIOS() {
@@ -1225,125 +1182,33 @@
            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   }
   
-  // Format time helper
-  function formatTime(seconds) {
-    if (!seconds || isNaN(seconds) || seconds === Infinity) return '0:00';
-    const minutes = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${minutes}:${secs.toString().padStart(2, '0')}`;
-  }
-  
-  // Update time display
-  function updateTimeDisplay() {
-    if (!audioElement) return;
-    const current = audioElement.currentTime || 0;
-    if (currentTimeSpan) currentTimeSpan.textContent = formatTime(current);
-  }
-  
-  // Start time updates
-  function startTimeUpdate() {
-    if (updateTimeId) clearInterval(updateTimeId);
-    updateTimeId = setInterval(updateTimeDisplay, 1000);
-  }
-  
-  function stopTimeUpdate() {
-    if (updateTimeId) {
-      clearInterval(updateTimeId);
-      updateTimeId = null;
-    }
-  }
-  
-  // Toggle play/pause
-  function toggleAudio(event) {
-    console.log('toggleAudio called');
-    if (event) event.preventDefault();
-    if (!audioElement) {
-      console.warn('No audio element');
-      return;
-    }
-    
-    console.log('Audio paused:', audioElement.paused);
-    
-    if (audioElement.paused) {
-      console.log('Attempting to play audio');
-      audioElement.play().then(() => {
-        console.log('Audio playing successfully');
-        isPlaying = true;
-        if (playIcon) playIcon.style.display = 'none';
-        if (pauseIcon) pauseIcon.style.display = 'inline';
-        if (toggleBtn) toggleBtn.setAttribute('aria-label', 'Pause');
-        startTimeUpdate();
-      }).catch(error => {
-        console.warn('Audio play failed:', error);
-        isPlaying = false;
-        stopTimeUpdate();
-      });
-    } else {
-      console.log('Pausing audio');
-      audioElement.pause();
-      isPlaying = false;
-      if (playIcon) playIcon.style.display = 'inline';
-      if (pauseIcon) pauseIcon.style.display = 'none';
-      if (toggleBtn) toggleBtn.setAttribute('aria-label', 'Lecture');
-      stopTimeUpdate();
-    }
-  }
-  
-  // Restart audio
-  function restartAudio(event) {
-    console.log('restartAudio called');
-    if (event) event.preventDefault();
-    if (!audioElement) {
-      console.warn('No audio element for restart');
-      return;
-    }
-    
-    audioElement.currentTime = 0;
-    updateTimeDisplay();
-    
-    if (!audioElement.paused) {
-      audioElement.play().catch(error => {
-        console.warn('Audio restart play failed:', error);
-      });
-    }
-  }
-  
   // Auto-start music if coming from envelope
   function initializePlayer() {
     const shouldStart = localStorage.getItem('startMusic');
     
-    // Show the player immediately
-    setTimeout(() => {
-      audioPlayer.classList.add('show');
-    }, 500);
-    
     if (shouldStart === 'true') {
       localStorage.removeItem('startMusic');
-      // Auto-start after showing (skip on iOS due to restrictions)
-      if (!isIOS()) {
-        setTimeout(() => {
-          toggleAudio();
-        }, 1000);
-      }
+      
+      // Auto-start for all platforms
+      setTimeout(() => {
+        audioElement.play().catch(error => {
+          console.warn('Audio auto-play failed:', error);
+        });
+      }, 1200);
     }
   }
   
   // Event listeners for audio element
   audioElement.addEventListener('loadedmetadata', () => {
-    duration = audioElement.duration || 0;
-    if (totalTimeSpan) totalTimeSpan.textContent = formatTime(duration);
-    console.log('Audio metadata loaded, duration:', formatTime(duration));
+    console.log('Audio metadata loaded, duration:', audioElement.duration || 0);
   });
   
   audioElement.addEventListener('ended', () => {
-    isPlaying = false;
-    playIcon.style.display = 'inline';
-    pauseIcon.style.display = 'none';
-    toggleBtn.setAttribute('aria-label', 'Lecture');
-    stopTimeUpdate();
-    // Reset to beginning
+    // Restart from beginning when ended
     audioElement.currentTime = 0;
-    updateTimeDisplay();
+    audioElement.play().catch(error => {
+      console.warn('Audio loop failed:', error);
+    });
   });
   
   audioElement.addEventListener('error', (e) => {
@@ -1351,31 +1216,12 @@
     console.warn('Make sure music.mp3 exists in the root folder and is accessible.');
   });
   
-  // Event listeners for controls
-  console.log('Adding event listeners to buttons');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', toggleAudio);
-    console.log('Toggle button listener added');
-  }
-  if (restartBtn) {
-    restartBtn.addEventListener('click', restartAudio);
-    console.log('Restart button listener added');
-  }
-  
   // Initialize when DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializePlayer);
   } else {
     initializePlayer();
   }
-  
-  // Cleanup on page unload
-  window.addEventListener('beforeunload', () => {
-    stopTimeUpdate();
-    if (audioElement && !audioElement.paused) {
-      audioElement.pause();
-    }
-  });
   
 })();
 </script>
